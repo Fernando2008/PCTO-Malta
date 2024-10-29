@@ -1,0 +1,147 @@
+a {
+  text-decoration: none;
+}
+
+.hamburger {
+  display: none;
+  position: absolute;
+  visibility: hidden;
+
+  .hamburger-links {
+    display: none;
+  }
+}
+
+.header {
+  /* background: linear-gradient(rgba(255, 255, 255, 0.5), transparent); */
+  position: fixed;
+  /* position: relative; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  /* border: 2px solid red; */
+}
+
+.logo {
+  font-size: 32px;
+  color: #fff;
+  font-weight: 700;
+  /* border: 2px solid violet; */
+}
+
+.navbar a {
+  position: relative;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  margin-left: 2.6vw;
+  transition: color 0.3s;
+  &:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+  /* border: 2px solid blue; */
+}
+
+.navbar a::before {
+  all: unset;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: #ffffff !important;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+  z-index: 1;
+}
+
+.navbar a:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    display: none;
+    position: absolute;
+    visibility: hidden;
+  }
+
+  .hamburger {
+    position: relative;
+    visibility: visible;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid red; */
+
+    .lines-wrapper {
+      /* border: 2px solid green; */
+    }
+
+    .line {
+      display: flex;
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 4px 0;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  .hamburger.open .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.open .line:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.open .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .hamburger-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10%;
+    background-color: rgba(51, 51, 51, 0.9);
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .hamburger.open .hamburger-links {
+    display: flex;
+  }
+
+  .hamburger-links a {
+    margin: 10px 0;
+    color: white;
+  }
+
+  .hamburger-links a::before {
+    all: unset;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: #ffffff !important;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+    z-index: 1;
+  }
+
+  .hamburger-links a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+}

@@ -1,0 +1,38 @@
+.home {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../assets/banner_placheholder.jpg") !important;
+  background-size: cover !important;
+  background-position: center;
+  padding: 0;
+  color: #fff !important;
+  /* border: 5px solid green; */
+
+  .wrapper {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6) 10%,
+      transparent 90%
+    );
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid violet; */
+
+    .home_welcome {
+      margin-top: 25vh;
+      width: fit-content;
+      /* border: 2px solid red; */
+
+      h1 {
+        font-size: 4rem;
+        font-weight: 800;
+      }
+    }
+  }
+
+  .divProva {
+    margin-top: 1000px;
+  }
+}
